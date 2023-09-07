@@ -19,7 +19,7 @@ echo "7. Subir repositorio a remoto"
 echo "8. Salir"
 
 op=""
-ruta="https://github.com/marcos24ps/Laravel_proyectos"
+ruta="https://github.com/marcos24ps/Laravel_proyectos.git"
 echo
 read -p "Escriba su opcion (1-8)" op
 
@@ -59,7 +59,7 @@ case $op in
 ;;
 7)
 	echo "7. Subir repositorio a remoto"
-	git push -u -f origin $ruta
+	git push -u -f $ruta
 	read -rsp $"\nPress any key to continue.."
 ;;
 8)
