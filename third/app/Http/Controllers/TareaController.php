@@ -17,14 +17,21 @@ class TareaController extends Controller
             'asignado_a' => 'required',
             ]);
             Tarea::create($request->all());
-            //return to_route('index');
+            return redirect('/');
     }
 
     public function delete($id)
     {
         $tarea = Tarea::find($id);
         $tarea->delete();
-        //return to_route('index');
+        return redirect('/');
     }
+
+    public function añadirTareas(Request $request) 
+    { 
+        $request->validate([ 'nombre' => 'required|string', 'fecha_inicio' => 'required|date', 'fecha_fin' => 'required|date|after_or_equal:fecha_inicio', 'asignado_a' => 'required|string', ]); $tarea = new Tarea(); $tarea->nombre = $request->nombre; $tarea->fecha_inicio = $request->fecha_inicio; $tarea->fecha_fin = $request->fecha_fin; $tarea->asignado_a = $request->asignado_a; $tarea->save(); return redirect()->route('nombre_de_la_ruta')->with('success', 'Tarea añadida exitosamente.'); 
+    }
+
+
 
 }

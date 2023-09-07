@@ -20,9 +20,15 @@ Route::get('/', function () {
     return view('tareas', ['tareas' => Tarea::all()]);
 });
 
-Route::get('/main', function () {
+Route::get('view', function () {
     return view('tareas', ['tareas' => Tarea::all()]);
 });
+
+Route::post('view', function () {
+    return view('tareas', ['tareas' => Tarea::all()]);
+});
+
+
 
 Route::post(
     '/nueva',
