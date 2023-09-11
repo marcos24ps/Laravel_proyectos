@@ -11,12 +11,13 @@ while salir=="1"
 do
 echo "1. Control de version"
 echo "2. Configurar usuario, email, password"
-echo "3. Realizar primer commit"
+echo "3. Realizar add"
 echo "4. Realizar commit sobre el ultimo"
 echo "5. Configurar repositorio remoto"
 echo "6. Cambiar nombre de la rama principal de Master a main"
 echo "7. Subir repositorio a remoto"
-echo "8. Salir"
+echo "8. Ver commits"
+echo "9. Salir"
 
 op=""
 ruta="https://github.com/marcos24ps/Laravel_proyectos.git"
@@ -37,14 +38,14 @@ case $op in
 	read -rsp $"\nPress any key to continue.."
 ;;
 3)
-	echo "3. Realizar primer commit"
+	echo "3. Realizar add"
 	git add .
-	git commit -m "25.04.2023.21.40"
 	read -rsp $"\nPresss any key to continue.."
 ;;
 4)
 	echo "4. Realizar commit sobre el ultimo"
-	git commit --ammend
+	read -p "Introduzca el nombre para el commit" op
+	git commit -m op
 	read -rsp $"\nPress any key to continue.."
 ;;
 5)
@@ -63,7 +64,12 @@ case $op in
 	read -rsp $"\nPress any key to continue.."
 ;;
 8)
-	echo "8. Salir"
+	echo "8. Mostrar commits"
+	git log --oneline
+	read -rsp $"\nPress any key to continue.."
+;;
+9)
+	echo "9. Salir"
 	echo "Gracias por su visita"
 	read -rsp $"\nPress any key to continue.."
 	$salir="S"
