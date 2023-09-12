@@ -45,7 +45,7 @@ case $op in
 4)
 	echo "4. Realizar commit sobre el ultimo"
 	read -p "Introduzca el nombre para el commit" op
-	git commit -m "op"
+	git commit -m "$op"
 	read -rsp $"\nPress any key to continue.."
 ;;
 5)
