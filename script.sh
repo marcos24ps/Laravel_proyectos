@@ -22,7 +22,7 @@ echo "9. Salir"
 op=""
 ruta="https://github.com/marcos24ps/Laravel_proyectos.git"
 echo
-read -p "Escriba su opcion (1-8)" op
+read -p "Escriba su opcion (1-9)" op
 
 case $op in
 1)
@@ -45,7 +45,7 @@ case $op in
 4)
 	echo "4. Realizar commit sobre el ultimo"
 	read -p "Introduzca el nombre para el commit" op
-	git commit -m op
+	git commit -m "op"
 	read -rsp $"\nPress any key to continue.."
 ;;
 5)
