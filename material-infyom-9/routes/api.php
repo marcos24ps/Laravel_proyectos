@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::resource('pedidos', App\Http\Controllers\API\PedidoAPIController::class)
+    ->except(['create', 'edit']);
+
+Route::resource('productos', App\Http\Controllers\API\ProductoAPIController::class)
+    ->except(['create', 'edit']);
