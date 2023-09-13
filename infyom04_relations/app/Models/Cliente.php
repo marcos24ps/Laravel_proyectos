@@ -10,12 +10,12 @@ class Cliente extends Model
 
     public $fillable = [
         'nombre',
-        'ciudad'
+        'password'
     ];
 
     protected $casts = [
         'nombre' => 'string',
-        'ciudad' => 'string'
+        'password' => 'string'
     ];
 
     public static array $rules = [
