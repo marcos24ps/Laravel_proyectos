@@ -24,3 +24,6 @@ Route::resource('clientes', App\Http\Controllers\API\ClienteAPIController::class
 
 Route::resource('productos', App\Http\Controllers\API\ProductoAPIController::class)
     ->except(['create', 'edit']);
+
+Route::resource('pedidos', App\Http\Controllers\API\PedidoAPIController::class)
+    ->except(['create', 'edit']);

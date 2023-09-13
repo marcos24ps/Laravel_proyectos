@@ -23,3 +23,4 @@ Auth::routes();
 
 Route::resource('clientes', App\Http\Controllers\ClienteController::class);
 Route::resource('productos', App\Http\Controllers\ProductoController::class);
+Route::resource('pedidos', App\Http\Controllers\PedidoController::class);
