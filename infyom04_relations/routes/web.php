@@ -21,6 +21,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
-Route::resource('clientes', App\Http\Controllers\ClienteController::class);
-Route::resource('productos', App\Http\Controllers\ProductoController::class);
-Route::resource('pedidos', App\Http\Controllers\PedidoController::class);
+Route::resource('clientes', App\Http\Controllers\ClienteController::class)->middleware('auth');
+Route::resource('productos', App\Http\Controllers\ProductoController::class)->middleware('auth');
+Route::resource('pedidos', App\Http\Controllers\PedidoController::class)->middleware('auth');

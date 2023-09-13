@@ -7,6 +7,9 @@ use App\Http\Requests\UpdatePedidoRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\PedidoRepository;
 use Illuminate\Http\Request;
+use App\Models\Cliente;
+use App\Models\Producto;
+use App\Models\Pedido;
 use Flash;
 
 class PedidoController extends AppBaseController
@@ -35,7 +38,9 @@ class PedidoController extends AppBaseController
      */
     public function create()
     {
-        return view('pedidos.create');
+        $clientes=Cliente::pluck('nombre','id');
+        $productos=Producto::pluck('nombre','id');
+        return view('pedidos.create',compact('clientes','productos'));
     }
 
     /**
@@ -44,7 +49,9 @@ class PedidoController extends AppBaseController
     public function store(CreatePedidoRequest $request)
     {
         $input = $request->all();
-
+        $pedido=new Pedido();
+        $pedido->id_cliente=$input['id_cliente'];
+        $pedido->id_producto=$input['id_producto'];
         $pedido = $this->pedidoRepository->create($input);
 
         Flash::success('Pedido saved successfully.');
