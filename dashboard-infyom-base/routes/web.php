@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('welcome', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
@@ -46,7 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('pages.billing');
 	})->name('billing');
 	Route::get('tables', function () {
-		return view('pages.tables');
+		return view('pages.tables',['name'=>'Samanta']);
 	})->name('tables');
 	Route::get('rtl', function () {
 		return view('pages.rtl');

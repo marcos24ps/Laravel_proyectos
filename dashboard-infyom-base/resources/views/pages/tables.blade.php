@@ -4,6 +4,7 @@
             <!-- Navbar -->
             <x-navbars.navs.auth titlePage="Tables"></x-navbars.navs.auth>
             <!-- End Navbar -->
+            <h1>hola {{$name}}</h1>
             <div class="container-fluid py-4">
                 <div class="row">
                     <div class="col-12">
